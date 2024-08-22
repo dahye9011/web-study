@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform Function</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: darkgreen;
+            left: 100px;
+            top: 100px;
+        }
+        #d1 {
+            /* translateX() => 가로로 이동 (+값 오른쪽 -값 왼쪽)
+               translateY() => 세로로 이동 (+값 아래쪽 -값 위쪽)
+               translate(X, Y) => 가로 세로 값으로 이동  */
+            transform: translateX(50px);
+            transform: translateY(50px);
+            transform: translate(50px,100px);
+            /* scale : 확대/축소 */
+            scale: 150%;
+            transform: scale(200%); /* 요소를 200%로 확대 (150%는 scale(1.5)) */
+            /* skew : 기울이기 */
+            transform: skewX(45deg);
+            /* rotate
+               x축 : 가로를 축으로 회전
+               y축 : 세로를 축으로 회전
+               z축 : 시계 방향으로 돌아감 */
+            transform: translateY(200px) rotateY(135deg);
+        }
+        #d2 {
+            background-color: cornflowerblue;
+            transform: translateX(100px) rotateZ(135deg);
+        }
+        #d3 {
+            background-color: orangered;
+            transform: rotateZ(360deg) translateX(100px);
+        }
+        #d4:hover {
+            transform: rotateX(50deg);
+        }
+        #d4 {
+            perspective: 300px; /* 3D 변형의 원근감을 설정, 값이 클수록 원근감이 줄어듦 */
+        }
+    </style>
+</head>
+<body>
+    <div id="d4">3D DIV</div>
+    <div id="d1">DIV</div>
+    <div id="d2">DIV</div>
+    <div id="d3">DIV</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+section {
+    /* block 속성 */
+    /* flex는 자식들을 나열함 (자식의 display 상관없음) */
+    display: flex;
+    background-color: aliceblue;
+    margin: 10px;
+}
+div {
+    width: 100px;
+    height: 50px;
+    background-color: powderblue;
+}
+/*
+    1. flex container의 flex-wrap은 기본 nowrap
+    2. wrap으로 변경할 시, 자식들을 다음 줄로 이동시킴 (자식들 크기 유지됨)
+    3. nowrap일 시, 자식들의 크기와 상관없이 일렬로 나열시킴 (자식 크기 줄어듦)
+*/
+#container1 {
+    width: 200px;
+    flex-wrap: wrap;
+}
+/*
+    justify-content : 자식들의 수평 정렬을(메인축) 설정 (한꺼번에 묶어서)
+    center : 중앙
+    flex-start : 기본값 (왼쪽 정렬)
+    flex-end : 맨뒤에 붙음 (오른쪽 정렬)
+    space-between : 양끝 자식을 양끝에 붙이고 나머지는 간격을 동일하게 맞춤
+    => 3개 배치 시 중앙에 하나가 오지만, 정중앙을 맞추고 싶으면 모든 자식 크기 동일해야 함
+    space-around : 자식들의 양옆 간격을 모두 동일하게 맞춤
+    space-evenly : 자식들 사이사이 간격을 전부 동일하게 맞춤
+*/
+#container2 {
+    justify-content: space-evenly;
+}
+/*#container2 > div:first-child {*/
+/*    width: 10px;*/
+/*}*/
+/*#container2 > div:last-child {*/
+/*    width: 300px;*/
+/*}*/
+
+/*
+    flex-direction : 자식들의 배치 방향을 결정
+    row : 기본값, 왼쪽에서 오른쪽으로
+    row-reverse : 오른쪽에서 왼쪽으로
+    column : 위에서 아래로
+    column-reverse : 아래에서 위로
+*/
+
+#container3 {
+    flex-direction: column;
+}
+
+/*
+    align-item : 자식들을 수직정렬하는 방법
+                (속성값은 justify-items와 같음)
+    center : 자식 덩어리를 중앙 배치
+    stretch : 자식을 위 아래 닿을 때까지 꽉 채움 (늘림)
+              ㄴ => 자식들에게 height가 지정되어 있지 않다면
+              => height가 부여되어 있을 시는 맨위에 붙어버림
+*/
+#container4 {
+    height: 200px;
+    align-items: flex-end;
+}
+/*
+    align-self : 부모(container)가 아닌 자식(item)에게 부여하는 속성으로,
+                혼자 정렬 방식을 다르게 할 수 있음
+*/
+#container4 > div:first-child {
+    height: 100px;
+    align-self: center;
+}
+/*
+    여러 줄일 경우, 줄과 줄 사이에 여백이 생김 (간격 다 동일함)
+    align-item: center => 그대로 중앙으로 옮김 (간격 있는 상태로)
+    align-content: center => 중앙으로 다 모음 (줄 사이 여백 사라짐)
+*/
+#container5 {
+    height: 200px;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+/*
+    flex-direction을 column으로 변경 시, 축이 변경되어
+    justify랑 align을 반대로 사용해야 함
+*/
+#container6 {
+    height: 200px;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+}
+#container6 > div:first-child {
+    align-self: flex-start;
+}
+#container7 > div {
+    width: unset;
+    height: unset;
+}
+/*
+    flex-basis : flex item에 적용하는 속성으로, 기본 크기를 설정함
+                width에 들어가는 단위 사용 가능
+                기본값은 auto로, item의 원래 width값을 사용
+*/
+#container7 > div:first-child {
+    flex-basis: 100px;
+    background-color: orange;
+}
+/*
+    flex-grow : flex item에 적용하는 속성으로, flex-basis 값보다 커질 수 있는가를 결정
+                기본값은 0으로, 0보다 큰 값 설정 시 빈 공간 전부 차지하게 됨
+                flex-grow는 비율 값으로, 여백을 나눠가질 비율을 결정하는 것
+    flex-shrink : flex item에 적용하는 속성으로, flex-basis 값보다 작아질 수 있는가를 결정
+                  기본값은 1으로, 0보다 큰 값 설정 시 작아질 수 있음 (안 작아지고 싶으면 0으로 설정)
+                  값이 클 수록 그만큼 배로 빨리 작아짐
+*/
+#container7 > div:nth-child(2) {
+    flex-grow: 2;
+    background-color: darkred;
+}
+#container7 > div:nth-child(3) {
+    flex-grow: 1;
+    background-color: purple;
+}
+#container8 > div {
+    border : 1px solid black;
+    flex-shrink: 0;
+}
+#container8 > div:first-child {
+    flex: 1; /* flex-grow: 1; flex-shrink: 1, flex-basis: 0% */
+    flex: 1 1 auto; /* flex-grow: 1; flex-shrink: 1, flex-basis: auto */
+    flex: 1 500px; /* flex-grow: 1; flex-shrink: 1, flex-basis: 500px */
+}

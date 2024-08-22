@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multimedia</title>
+</head>
+<body>
+    <img src="../zz.jpg" alt="" width="150" height="100"><br>
+    <img src="https://tvstore-phinf.pstatic.net/20210914_191/1631614821883lmWOm_JPEG/00020.jpg" alt="" width="150" height="100"><br>
+    <!-- 음소거, 비디오 실행 컨트롤(재생 버튼, 볼륨 조절, 재생 시간 표시 등), 반복 재생, 로드 전 이미지-->
+    <video src="video.mp4" muted controls loop poster="../zz.jpg"></video><br>
+    <audio src="audio.mp3" loop control muted autoplay></audio><br>
+    <!-- 다목적 태그 (뭐든 넣을 수 있음 / audio, video, img는 각 태그가 있으니 맞는 태그로 넣는 게 나음 -->
+    <object data="example.pdf" type="application/pdf" width="600" height="400"></object><br>
+    <embed src="../images/video.mp4" type="video/mp4"><br>
+    <object data="1.%20list.html" type="text/html">
+        list
+    </object>
+    <br>
+    <iframe src="1.%20list.html" frameborder="0"></iframe>
+    <!-- -->
+    <h2>네이버</h2>
+    <object data="https://www.naver.com" type="text/html">
+    <!-- 웹 브라우저가 object 지원하지 않을 시 표시되는 대체 콘텐츠 -->
+        안 나옴
+    </object>
+    <br>
+    <embed src="https://www.naver.com" type="text/html">
+    <br>
+    <iframe src="https://www.naver.com" frameborder="0"></iframe>
+    <br>
+    <!-- 시맨틱 태그, 그림이나 영상 등 요소 감싸는 데 사용 -->
+    <figure>
+        <img src="../zz.jpg" alt="짱구">
+    <!-- figcaption은 선택이며, 표시하는 이미지의 제목(캡션)을 설정
+        figure 안에 있어야 함 (최상단 혹은 최하단에 위치해야 함) -->
+        <figcaption>짱구!</figcaption>
+    </figure>
+</body>
+</html>

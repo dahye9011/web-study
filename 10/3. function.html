@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    add(1,2);
+    // n2에 3이 대입되는 게 아니라 n1에 3이 대입되고, n2는 undefined
+    add(3);
+    // 함수에는 매개변수 작성 가능, default 매개변수 작성 가능
+    function add(n1 = 10, n2) {
+        console.log(n1, n2);
+        console.log(`결과 : ${n1 + n2}`);
+    }
+    let n1 = 10;
+    multiple(1,2,3,4,5,6);
+    // 전역변수 : 함수 밖에 존재하면서 script 태그에 작성되어 있는 변수
+    //          => 어디서나 사용 가능
+    function multiple() {
+        // 함수 안에서만 사용 가능
+        let n2 = 20; // 지역변수 : 함수가 실행될 때 생성 => 함수 실행 끝나면 없어짐
+        console.log(`${n1} + ${n2}`);
+    }
+    console.log(`결과(n1) : ${n1}`);
+
+    function divide(n1, n2) {
+        const result = n1 / n2;
+        console.log(result);
+        return result; // 함수 내의 변수값을 밖으로 가져가겠다
+    }
+    var myResult = divide(1, 2); // divide 실행이 끝나면 result를 가져온 것
+
+    // 전역변수와 지역변수 이름 동일할 경우 => 지역변수가 우선
+    function modular(n1, n2) {
+        let result = n1 % n2;
+        return result; // return문 => 함수 실행 종료
+        console.log('이거 절대 안 나옴');
+    }
+    var result = modular(5, 3);
+    console.log(result);
+
+    // 1. function 키워드 사용
+    a(); // 가능
+    function a(){} // 함수 선언문
+    // 2. 함수 리터럴 (변수의 형태) 사용
+    // b(); 안 됨
+    var b = function (){}
+    // 3. 화살표 함수 (익명 함수) (자바스크립트는 =, 자바는 -)
+    // c(); <- 이거 안 됨, 변수 형태이기 때문에 함수 생성하고 나서 사용해야 함
+    var c = n1 => n1 + 100;
+    console.log(c(10,20));
+    console.log((n1 => n1 + 100) (5));
+    (() => console.log('실행합니다!'))();
+    var d = alert;
+    d('d가 실행');
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* border-box => width와 height 속성에 콘텐츠뿐만 아니라 패딩과 테두리도 포함 */
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            /* 아래 속성들 Flexbox 레이아웃에서만 동작 */
+            justify-content: center; /* 가로 방향 중앙 정렬 */
+            align-items: center; /* 세로 방향 중앙 정렬 */
+            height: 100vh; /* 뷰포트 전체 높이 */
+        }
+        .product {
+            position: relative;
+            width: 400px;
+            height: 600px;
+            box-shadow: 2px 2px 30px 2px black;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .product:hover > .image {
+            /* 기본 상태에서 80% */
+            scale: 90%;
+        }
+        .product:hover > .information {
+            top: 0;
+        }
+        .product > .image {
+            width: 100%;
+            height: 100%;
+            background-image: url("https://www.apple.com/v/iphone/home/bv/images/overview/select/iphone_15_pro__bpnjhcrxofqu_large_2x.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            scale: 80%;
+            transition-duration: 0.5s;
+        }
+        .information {
+            position: absolute;
+            top: 100%;
+            padding: 20px 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            text-align: center;
+            transition-duration: 0.5s;
+        }
+        .information > h2 {
+            margin-bottom: 150px;
+            font-size: 2em;
+        }
+        .information > p {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .information > strong {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <section class="product">
+        <div class="image"></div>
+        <div class="information">
+            <h2>iPhone 15 Pro</h2>
+            <p>궁극의 iPhone.</p>
+            <strong>₩1,550,000부터</strong>
+        </div>
+    </section>
+</body>
+</html>

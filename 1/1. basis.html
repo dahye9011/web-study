@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basis</title>
+</head>
+<body>
+    <!-- hx 태그 : 사이트의 제목들을 표시하는 태그로, 1~6까지 존재 -->
+    <!-- 숫자가 커질 수록 주제목 ~ 부제목으로 의미가 부여됨 (주제목은 사이트에 하나만) -->
+    <h1>h1 태그입니다.</h1>
+    <h2>h2 태그입니다.</h2>
+    <h3>h3 태그입니다.</h3>
+    <h4>h4 태그입니다.</h4>
+    <h5>h5 태그입니다.</h5>
+    <h6>h6 태그입니다.</h6>
+    <hr>
+    <!-- header : 문서의 최상단 혹은 왼쪽에 위치하며, 검색창이나 사이트의 주메뉴를 표시 -->
+    <!-- main : 문서의 실제 (주요) 내용을 표시 -->
+    <!-- footer : 문서의 최하단에 위치하며, 사이트 정보, 회사 정보, 사이트맵 등을 표시 -->
+    <h1>LAYOUT 1</h1>
+    <header>헤더 영역</header>
+    <main>메인 영역</main>
+    <footer>푸터 영역</footer>
+    <hr>
+    <h1>LAYOUT 2</h1>
+    <header>헤더 영역</header>
+    <aside>왼쪽 사이드</aside>
+    <main>메인 영역</main>
+    <footer>푸터 영역</footer>
+    <hr>
+    <h1>LAYOUT 3</h1>
+    <header>헤더 영역</header>
+    <aside>왼쪽 사이드</aside>
+    <main>메인 영역</main>
+    <aside>오른쪽 사이드</aside>
+    <footer>푸터 영역</footer>
+    <hr>
+    <!-- html에서 연속된 공백은 하나의 공백으로 처리 -->
+    <article>
+        article : 메인 안에 위치하며 신문이나 잡지, 블로그에서의 게시글 하나 등
+        실제로 보여주고 싶은 내용을 넣는 영역
+        독립된 콘텐츠를 가지기 때문에 article 태그만 떼서 페이지 하나로 쳐도 이상하지 않음 (독립적으로 존재 O)
+    </article>
+    <section>
+        section : 메인 안에 위치하며, 하나의 콘텐츠를 나타내는 영역
+        article과 비슷하지만, section은 같은 주제의 콘텐츠를 묶는 역할로 사용
+        article처럼 그 부분만 떼서 하나의 페이지처럼 되지는 않음
+    </section>
+    <hr>
+    <div>
+        div : 영역을 나누기 위해 사용하는 태그 (block element)
+        아무 태그나 다 넣어서 구성 가능
+    </div>
+    <span>
+        span : 영역을 나누기 위해 사용하는 태그 (inline element)
+        div와 비슷하지만, span 태그 안에는 일반적으로 '글자 혹은 아이콘' 관련 태그만 넣음
+    </span>
+    <hr>
+    <!-- 텍스트, 이미지, 아이콘 관련 태그는 웬만해선 한 줄로 나열됨 (다음 줄로 안 감) -->
+    <b>b : 강조 태그1 (일반 글자보다 강조긴 하지만, 진하게 표시되는 느낌)</b>
+    <strong>strong : 강조 태그2 (b 태그보다 강조의 의미 강함 - 시맨틱)</strong>
+    <!-- br 태그 사용 지양... (css로 하는 것이 추천됨) -->
+    <br>
+    <p>p : 여기는 한 문단 </p>
+    <p> 다음 문단</p>
+    <blockquote>blockquote : 들여쓰기, 여러 줄로 된 인용문 부분 나타냄</blockquote>
+    <!-- 줄임말 표현, title에 본문장을 작성 -->
+    <abbr title="Internet of Things">IoT</abbr>
+    <!-- 창작물 내용 -->
+    <p><cite>모나리자</cite>는 16세기 르네상스 시대에 레오나르도 다 빈치가 그린 초상화입니다.</p>
+    <small>small : 작게 표시</small><br>
+    <span>sub : 아래 첨자 / 물의 화학식은 H<sub>2</sub>O</span><br>
+    <span>sup : 위 첨자 / E = mc<sup>2</sup></span><br>
+    <u>u : 밑줄 </u><br>
+    <!-- 프로그래밍 코드 언어 -->
+    <code>let i = 0; i++;</code><br>
+    <ins>ins : 새로운 내용 삽입 (밑줄)</ins><br>
+    <del>del : 기존 내용 삭제 (취소선)</del><br>
+    <i>i : 이탤릭 태그, 아이콘 표시하는 작업도 많이 함 (icon 태그 X)</i><br>
+    <p>mark : 강조, 나는 지금 <mark>집</mark>에 가고 싶다.</p>
+    <!-- 특정 범위 내의 단순 값 혹은 백분율 -->
+    <meter min="0" max="100" value="50">50/100</meter>
+    <!-- 작업의 진척도인 프로그레스 바를 나타냄 -->
+    <progress value="70" max="100">70%</progress>
+    <pre>
+        pre : 사용된    띄어쓰기와
+        줄바꿈  그대로 표시
+    </pre>
+    <search>search : 검색어가 들어감</search>
+    <!-- 시간의 특정 지점 또는 구간 나타냄
+        datetime을 지정해서 검색 결과에 포함시키거나 알림 구현 가능 -->
+    <time datetime="PT2H30M">2h 30m</time><br>
+    <time datetime="2024-08-05">8월 5일</time><br>
+    <!-- 프로그램 출력 예시 (글씨체가 다르게 표시됨) -->
+    <samp>Keyboard not found</samp><br>
+    <!-- 일본어 표기에서 후리가나를 나타냄 -->
+    <ruby>明日<rp>(</rp><rt>Asita</rt><rp>)</rp></ruby>
+</body>
+</html>

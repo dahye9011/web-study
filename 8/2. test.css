@@ -1,0 +1,111 @@
+@import "public.css";
+body {
+    background-color: var(--Summer-4-rgba);
+}
+section {
+    position: absolute;
+    width: 340px;
+    padding: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+section.menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+section.menu a {
+    font-family: Bold;
+    color: var(--Miami-South-Beach-2-rgba);
+    font-size: var(--font-size-extra-bold);
+}
+section.menu i {
+    font-family: inherit;
+    font-size: inherit;
+}
+section > .profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+section > .profile > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+section > .profile > h1 {
+    font-family: ExtraBold;
+    font-size: var(--font-size-extra-bold);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: var(--Miami-South-Beach-4-rgba);
+}
+section > .profile > h2 {
+    color: var(--Miami-South-Beach-5-rgba);
+    font-family: Regular;
+    font-size: var(--font-size-bold);
+    margin-bottom: 20px;
+}
+section > .profile > a {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    color: var(--Miami-South-Beach-1-rgba);
+    background-color: black;
+    border-radius: 16px;
+    text-decoration: none;
+    line-height: 32px;
+}
+section > .profile > a:hover {
+    opacity: 0.8;
+}
+section > .contact {
+    list-style: none;
+}
+section > .contact li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+section >.contact i {
+    margin-right: 8px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.others ul {
+    display: flex;
+    padding: 20px 0;
+    list-style: none;
+    justify-content: center;
+}
+.others ul li {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: black;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+.others ul li.on {
+    opacity: 0.2;
+}
+.others ul li:nth-child(1) {
+    background-color: var(--Green-car-with-luggage-ready-for-summer-holidays-3D-Rendering-2-rgba);
+}
+.others ul li:nth-child(2){
+    background-color: var(--Green-car-with-luggage-ready-for-summer-holidays-3D-Rendering-3-rgba);
+}
+.others ul li:nth-child(3){
+    background-color: var(--Green-car-with-luggage-ready-for-summer-holidays-3D-Rendering-4-rgba);
+}
+.others ul li:nth-child(4){
+    background-color: var(--Green-car-with-luggage-ready-for-summer-holidays-3D-Rendering-5-rgba);
+}
+.others ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

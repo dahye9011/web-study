@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객실 소개</title>
+    <style>
+        header {
+            border-bottom: 1px solid black;
+        }
+        li {
+            display: inline-block;
+            list-style: none;
+            margin-right: 10px;
+        }
+        li > a {
+            padding: 15px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            /* 모서리 둥글게 */
+            border-radius: 6px;
+        }
+        li > a:hover {
+            color: white;
+            background-color: cornflowerblue;
+        }
+        main {
+            width: 400px;
+            margin: 0 auto;
+        }
+        section {
+            border: 1px solid black;
+            border-radius: 6px;
+            margin: 30px 0;
+            padding: 30px 20px;
+        }
+        /* URL에 #guide가 있으면, id="guide"인 요소가 :target으로 선택됨 */
+        section:target {
+            background-color: azure;
+        }
+        h2 {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <!-- 다른 웹 페이지로 연결하거나,
+        현재 웹 페이지의 콘텐츠 내부로 연결되는 탐색(navigation)을 위한 링크가 있는 영역 -->
+        <nav>
+            <ul>
+                <!-- # 붙여서 id 값 지정 -->
+                <li><a href="#guide">이용 안내</a></li>
+                <li><a href="#information">객실 소개</a></li>
+                <li><a href="#price">예약 방법 및 요금</a></li>
+                <li><a href="#">예약하기</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="guide">
+            <h2>이용 안내</h2>
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, blanditiis consequatur enim illo ipsam nesciunt, non qui reiciendis repellendus repudiandae sapiente similique velit. Alias magnam nulla placeat quod unde, voluptatem.</span>
+        </section>
+
+        <section id="information">
+            <h2>객실 소개</h2>
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, blanditiis consequatur enim illo ipsam nesciunt, non qui reiciendis repellendus repudiandae sapiente similique velit. Alias magnam nulla placeat quod unde, voluptatem.</span>
+        </section>
+
+        <section id="price">
+            <h2>예약 방법 및 요금</h2>
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, blanditiis consequatur enim illo ipsam nesciunt, non qui reiciendis repellendus repudiandae sapiente similique velit. Alias magnam nulla placeat quod unde, voluptatem.</span>
+        </section>
+    </main>
+</body>
+</html>

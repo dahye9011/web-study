@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form2</title>
+</head>
+<body>
+    <!-- input, select 등 form 요소는 단독으로 사용해도 작동은 되지만
+        label로 묶어서 사용자와 interaction 할 수 있어야 함
+        1) label 태그 안에 form 요소를 넣기
+            => label 하나에 form 요소 하나 (1:1)
+        2) label 밖에 form 요소를 넣는 경우
+            => label의 for 속성 값과 form 요소의 id 속성 값을 똑같이 맞추기
+        -->
+    <form>
+    <!-- label 태그 안에 input 태그 포함 => 레이블 클릭해도 입력창 선택됨
+        label 태그 안에 포함되지 않은 경우 for, id 사용하면 연결됨 -->
+        <label for="pw">비밀번호:</label>
+        <input id="pw" type="password">
+        <br>
+        <label for="user-id">아이디:</label>
+        <input id="user-id" type="text">
+    </form>
+    <h3>배우고 싶은 언어는?</h3>
+    <label>
+        <span>C</span>
+        <input type="checkbox">
+    </label>
+    <label>
+        <span>Java</span>
+        <input type="checkbox">
+    </label>
+    <label>
+        <span>Python</span>
+        <input type="checkbox">
+    </label>
+    <fieldset>
+        <div><span>1</span><input type="text" tabindex="1"></div>
+        <div><span>2</span><input type="text" autofocus></div>
+        <div><span>3</span><input type="text"></div>
+        <div><span>4</span><input type="text" tabindex="2"></div>
+        <div><span>5</span><input type="text"></div>
+    </fieldset>
+    <textarea cols="5" rows="2" maxlength="8"></textarea>
+    <form>
+        <input type="text" required><br>
+        <!-- readonlu 수정 X, name 속성이 있다면 form 전송 O -->
+        <input type="text" value="기본 텍스트" readonly><br>
+        <!-- disabled 수정 X, name 속성이 있어도 form 전송 X -->
+        <input type="text" value="기본 텍스트" disabled><br>
+        <button>버튼</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+main {
+    width: 500px;
+    /* auto => 좌우 여백을 자동으로 조정하여, 요소가 수평으로 중앙에 위치하도록 함 */
+    margin: 20px auto 0;
+    border: 1px solid black;
+}
+.top-section {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 10px;
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231005/pngtree-apples-in-a-basket-sitting-on-a-wooden-table-image_13326295.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.title-container {
+    /*
+        absolute와 같은 부모 기준이 되는 요소는
+        부모의 position이 static(기본)이 아니어야 함
+    */
+    position: absolute; /* 부모 기준으로 이동 */
+    width: 100%;
+    bottom: 0; /* 바닥에 딱 붙도록 */
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.title-container > h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+.title-container > p {
+    color: orange;
+    margin: 0;
+}
+.title-container > p > span {
+    /* <span> 요소가 블록 요소로 변경되면서 부모 요소의 전체 너비를 차지 */
+    display: block;
+    margin-bottom: 5px;
+}
+.middle-section {
+    text-align: center;
+    font-weight: bold;
+}
+h2 {
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+h3 {
+    color: red;
+    margin: 20px;
+}
+p {
+    margin: 10px;
+}
+.blue {
+    color: blue;
+}
+.div2 {
+    border-bottom: 1px solid black;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breadcrumb</title>
+    <style>
+        * {
+            font-size: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        ol {
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+        }
+        li::after {
+            content: ' /';
+            color: red;
+        }
+        li:last-child:after {
+            content: '';
+        }
+        a {
+            text-decoration: inherit;
+            color: inherit;
+            text-transform: capitalize;
+        }
+        /* 커서를 가져다 댔을 때 */
+        a:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li><a href="#">home</a></li>
+        <li><a href="#">library</a></li>
+        <li><a href="#">data</a></li>
+    </ol>
+</body>
+</html>

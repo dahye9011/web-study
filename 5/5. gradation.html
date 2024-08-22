@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradation</title>
+    <style>
+        div {
+            width: 200px;
+            height: 150px;
+            border: 2px solid black;
+        }
+        .grad-linear1 {
+        /* 오른쪽 밑 방향으로 blue에서 white로 변화 */
+            background: linear-gradient(to right bottom, blue, white);
+        }
+        .grad-linear2 {
+        /* 45도 방향(오른쪽 위)으로 red에서 white로 변화 */
+            background: linear-gradient(45deg, red, white);
+        }
+        .grad-linear3 {
+        /* black으로 시작해서 70% 구간까지 blue로 변한 다음, 나머지 구간에서 white로 변함 */
+            background: linear-gradient(to bottom, black, blue 70%, white);
+        }
+        .grad-radial1 {
+        /* 중앙에서부터 white, yellow, red 순으로 원형으로 퍼짐 */
+            background: radial-gradient(white, yellow, red);
+        }
+        .grad-radial2 {
+        /* 기본은 타원형(eclipse)인데 circle을 넣으면 원형이 됨 */
+            background: radial-gradient(circle, white, yellow, rebeccapurple);
+        }
+        .grad-radial3 {
+        /* 그라데이션 중심에서 가장 가까운 측면에 닿을 때까지 closest-side
+             X축 좌표 60%, Y축 좌표 40% 위치 중심
+             (100% 100%는 요소의 오른쪽 아래 모서리, 0% 0%는 요소의 왼쪽 위 모서리, 50% 50%는 요소의 중앙) */
+            background: radial-gradient(circle closest-side at 60% 40%, white, yellow, green);
+        }
+        .grad-radial4 {
+        /* 그라데이션 중심에서 가장 가까운 꼭짓점에 닿을 때까지 closest-side */
+            background: radial-gradient(circle closest-corner at 60% 40%, white, yellow, green);
+        }
+        .grad-radial5 {
+        /* white에서 blue로 퍼져나가게 */
+            background: radial-gradient(circle at 20% 20%, white, blue);
+        }
+        .grad1 {
+            background: repeating-linear-gradient(yellow, red 20px);
+        }
+        .grad2 {
+            background: repeating-radial-gradient(circle, white, blue 10%);
+        }
+    </style>
+</head>
+<body>
+    <h2>선형 그라데이션</h2>
+    <div class="grad-linear1"></div>
+    <div class="grad-linear2"></div>
+    <div class="grad-linear3"></div>
+    <h2>원형 그라데이션</h2>
+    <div class="grad-radial1"></div>
+    <div class="grad-radial2"></div>
+    <div class="grad-radial3"></div>
+    <div class="grad-radial4"></div>
+    <div class="grad-radial5"></div>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+</body>s
+</html>

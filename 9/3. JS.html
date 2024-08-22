@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS basis</title>
+</head>
+<body>
+</body>
+</html>
+    <script>
+        // 전역 변수 (이 페이지 어디서나 사용 O)
+        // 1. 그냥 만들기
+        a = 10; // 이렇게 만들지 X
+        console.log("a는", a, 1, 2, 3, 4);
+        // 2. let 키워드로 만들기
+        let b = 20; // 좋은 방법
+        console.log('b:', b);
+        // 3. const 키워드로 만들기
+        const c = 30; // 좋은 방법
+        console.log('c는', c);
+        // 4. var 키워드로 만들기
+        var d = 40; // 좋지 않은 방법 (옛날에 많이 사용)
+        console.log('d:', d);
+        d = 100;
+        console.log('변경 d:', d);
+        // 변수를 새로 생성하면서 다시 값을 설정
+        var d = 300;
+        console.log('변경 d:', d);
+        let e = 10;
+        e = 20;
+        console.log('e:',e);
+        // 이미 생성되어 있는 변수는 재선언 불가능, 값의 재할당만 가능
+        // let e = 40; 오류
+        const f = 340; // 한번 정의할 시 변경 불가한 상수 형태
+        // f = 100; const는 재할당도 불가능
+
+        var value = undefined;
+        var value;
+        console.log(value);
+        var value = null;
+        console.log(value);
+
+        // 문자열에 다른 거 더하면 이어 붙음
+        var value = -1;
+        var value2;
+        console.log(value + 'test' + 'a' + 12345);
+        console.log(value + value2);
+
+        var n1 = '123';
+        var n2 = '456';
+        var n3 = parseInt(n1);
+        console.log(n3 + parseInt(n2));
+        var n3 = +n1; // +만 붙이면 숫자가 됨
+        var n4 = +'100';
+        console.log(n3 + n4);
+        console.log((+'1') + (+'2'));
+        console.log(('1' - 0) + ('2' - 0));
+
+        var check = true;
+        console.log(check);
+        console.log(Boolean('1')); // true
+        console.log(!!('1')); // true
+        console.log(!true); // false
+        console.log(10000);
+        console.log(10000 + '');
+        console.log(typeof 10000);
+        console.log(typeof (10000 + ''));
+        /* key는 중복 없음, 같은 key 값은 value가 덮어 씌워짐
+        * value는 뭘 적어도 O, 중복 O */
+        var card = {
+            // 따옴표 상관없이 동일한 키로 인식
+            'rank' : 'A',
+            price : 1500,
+            rank : "B",
+            name : 1500
+        };
+        console.log(card);
+    </script>

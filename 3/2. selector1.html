@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>클래스/id 선택자</title>
+    <style>
+        li {
+            font-size: 20px;
+        }
+    /* 클래스 선택할 때는 '.클래스명' */
+        .n {
+            font-size: 30px;
+        }
+        .h, .n {
+            color: aqua;
+        }
+        .a {
+            font-weight: bold;
+        }
+    /* id로 적용할 때는 '#id값' */
+    /* id는 class보다 우선순위 높음 => 같은 스타일 중복일 시 id가 이김 */
+        #b {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="a">안</li>
+        <li class="n a">녕</li>
+        <li class="h">하</li>
+        <li class="n">세</li>
+        <li>요</li>
+    </ul>
+    <h2>id 속성</h2>
+    <ul>
+        <li id="b" class="a">반</li>
+        <li>가</li>
+        <li>워</li>
+        <li>요</li>
+    </ul>
+</body>
+</html>

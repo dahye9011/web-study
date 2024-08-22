@@ -1,0 +1,79 @@
+section {
+    /* block 속성 */
+    /* grid는 flex와 다르게 자식들을 옆으로 나열하지 않음 */
+    /* => 밑으로 나열 */
+    display: grid;
+    background-color: steelblue;
+    margin: 10px;
+}
+div {
+    box-sizing: border-box; /* border 포함해서 크기 정하기 */
+    border: 1px solid black;
+    /*width: 100px;*/
+    /*height: 50px;*/
+    background-color: powderblue;
+}
+/*
+    grid-template-columns: grie item들의 열 나열을 결정
+     => column의 경우, 개수도 정하면서 각 column의 크기를 결정함
+*/
+#container1 {
+    /* 무조건 400, 200, 100 크기를 가짐 (부모가 작아져도 유지 - 부모를 넘어감) */
+    grid-template-columns: 400px 200px 100px;
+    /* 부모 width 기준으로 1:1:1 비율로 나눠가짐 */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 1fr로 3번 반복 */
+    grid-template-columns: repeat(3, 1fr);
+    /* 1열은 400px, 2열은 남은 공간 전부 차지 */
+    grid-template-columns: 400px 1fr;
+}
+#container2 {
+    /* 행1은 200px, 행2는 100px, 나머지는 원래 자기 크기대로 */
+    grid-template-rows: 200px 100px;
+    /* minmax(최소, 최대) : 크기의 최소와 최대 설정 가능
+       minmax(100px, auto) : 최소 100px은 가져야 하고, 늘릴 수 있으면 늘리기
+    */
+    grid-template-columns: 100px 200px minmax(100px, auto);
+}
+/*
+    auto-fill, auto-fit : column 개수 미리 정하지 않고 최대한 채우기
+    auto-fill은 공간이 남으면 여백이 생김
+    auto-fit은 공간이 남으면 여백을 전부 채움
+*/
+#container3 {
+    grid-template-columns: repeat(auto-fit, minmax(20%, auto));
+}
+#container4 {
+    height: 400px;
+    grid-template-areas:
+            'a a b'
+            'a a b'
+            'c c d';
+    /* grid-gap, gap 똑같음 (브라우저 호환성으로 두 개 존재)
+       grid item 사이만 20px 되도록 만들어 줌
+    */
+    grid-gap: 20px;
+    gap: 20px;
+}
+#container4 > div:nth-child(1) {
+    grid-area: a;
+    background-color: darkblue;
+}
+#container4 > div:nth-child(2) {
+    group-reset: b;
+    background-color: darkred;
+}
+#container4 > div:nth-child(3) {
+    grid-area: c;
+    background-color: lightgoldenrodyellow;
+}
+#container4 > div:nth-child(4) {
+    grid-area: d;
+    background-color: darkolivegreen;
+}
+#container5 {
+    height: 200px;
+    grid-template-columns: repeat(4, 100px);
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo1</title>
+    <style>
+        a, input {
+            font-size: 3rem;
+        }
+        a:visited {
+            color: black;
+        }
+        /* 앵커의 목적지가 되는 요소
+           앵커 대상에 스타일을 적용
+           (같은 페이지 내에서 다른 위치로 이동하는 앵커 목적지가 되는 부분)
+        */
+        input:target {
+            color: blue;
+        }
+        input:focus {
+            background-color: lightpink;
+        }
+        :disabled {
+            background-color: black;
+        }
+        :enabled {
+            padding: 10px;
+        }
+        /* input인데 type이 text가 아닌 모든 요소 */
+        input:not[type=text] {
+            color: darkseagreen;
+        }
+    </style>
+</head>
+<body>
+    <!-- id="input"인 input 요소를 가리킴
+        사용자가 링크를 클릭하면,
+        브라우저의 URL이 #input으로 변경되면서 해당 input 요소가 현재의 target이 됨-->
+    <a href="#input">링크</a>
+    <input type="text" value="작성함"><br>
+    <input type="text" value="작성함" disabled><br>
+    <input type="text" value="작성함"><br>
+    <input type="text" value="작성함"><br>
+    <input type="password" value="작성함"><br>
+    <input type="button" value="작성함"><br>
+    <input id="input" type="text" value="작성함"><br>
+</body>
+</html>

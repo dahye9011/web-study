@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D</title>
+    <style>
+        section {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            perspective: 600px;
+        }
+        section article {
+            width: 100%;
+            height: 100%;
+            background-color: royalblue;
+            /* 투명도 설정 */
+            opacity: 0.8;
+        }
+        section:first-child > article {
+            transform: rotateY(120deg);
+            /* 회전의 중심점을 요소의 중앙으로 설정 */
+            transform-origin: center center;
+        }
+        section:nth-child(2):hover > article {
+            transform: rotateY(120deg);
+            /* 회전의 중심점을 요소의 오른쪽 중앙으로 설정 */
+            transform-origin: right center;
+        }
+        section:nth-child(2) > article {
+            /* 트랜지션의 실행 시간을 지정 (hover) */
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article></article>
+    </section>
+    <section>
+        <article></article>
+    </section>
+</body>
+</html>

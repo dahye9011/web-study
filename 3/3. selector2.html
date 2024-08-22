@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자식 선택자</title>
+    <style>
+    /* 자식 선택자 : label의 바로 아래(내부)에 있는 자식(span 태그) 선택 */
+        label > span {
+            font-weight: bold;
+        }
+    /* 후손 선택자 : li 내부 어디에 있든 span 태그 선택 => 자식 + 후손 선택 */
+        li span {
+            color: chocolate;
+        }
+    /* 인접 형제 선택자 : span이랑 같은 라인 바로 옆에 붙어 있는 input 선택 (인접 형제 선택) */
+    span+input {
+        background-color: beige;
+    }
+    /* 일반 형제 선택자 : span이랑 같은 라인에 있는 button이면 O (형제 선택)
+                        span 요소 뒤에 오는 모든 button 요소에 적용 (span에 적용 X)*/
+    span~button {
+        background-color: aqua;
+    }
+    ul > li > label > input {
+        color: royalblue;
+    }
+    input {
+        color: darkgreen;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <label>
+                <span>TEXT1</span>
+                <input type="text">
+                <button>BUTTON1</button>
+            </label>
+        </li>
+        <li>
+            <label>
+                <span>TEXT2</span>
+                <input type="text">
+                <button>BUTTON2</button>
+            </label>
+        </li>
+        <li>
+            <label>
+                <span>TEXT3</span>
+                <input type="text">
+                <button>BUTTON3</button>
+            </label>
+        </li>
+        <li>
+            <label>
+                <span>TEXT4</span>
+                <input type="text">
+                <button>BUTTON4</button>
+            </label>
+        </li>
+        <li>
+            <label>
+                <span>TEXT5</span>
+                <input type="text">
+                <button>BUTTON5</button>
+            </label>
+        </li>
+    </ul>
+</body>
+</html>

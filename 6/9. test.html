@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상품</title>
+    <style>
+        .product {
+            display: block;
+            width: 200px;
+            border: 1px solid blueviolet;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+        .product:hover img {
+            scale: 120%;
+        }
+        .image-container {
+            width: 100%;
+            margin-bottom: 10px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            /* 이미지가 잘리면서 비율 유지 */
+            object-fit: cover;
+            transition-duration: 0.2s;
+        }
+        .title {
+            margin-bottom: 5px;
+        }
+        .price-container > b {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.naver.com" class="product">
+        <div class="image-container">
+            <img src="https://m.glori.co.kr/web/product/big/202404/9a466e187bf20719296b1742c699b68d.jpg" alt="#">
+        </div>
+        <div class="title">
+            펩시제로 라임향 제로카페인 190ml 60캔 + 증정
+        </div>
+        <div class="price-container">
+            <b>21,900</b><span>원</span>
+        </div>
+    </a>
+</body>
+</html>

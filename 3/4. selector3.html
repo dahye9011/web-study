@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>속성 선택자</title>
+    <style>
+        input[type=password] {
+            background-color: lightpink;
+        }
+        /* a 태그이면서 href 속성이 있으면 적용 */
+        a[href] {
+            color: green;
+        }
+        /* type 속성이 있는 태그 전부 적용 */
+        [type] {
+            font-weight: bold;
+        }
+        a[href*=http] {
+            color: orange;
+            font-style: oblique;
+        /* bold : 진하게
+           bolder : 기존의 글씨체가 bold일 때, 더 bold
+           lighter : 기존의 글씨체보다 더 light
+           100 ~ 900 : 절댓값으로 굵기를 표현, 500 == normal, 700 == bold*/
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"><br>
+    <input type="password"><br>
+    <input type="checkbox"></input><br>
+    <a href="#">링크</a><br>
+    <a>링크</a><br>
+    <button type="button">그냥 버튼</button>
+
+    <!-- a 태그는 태그 안에 내용을 적어야 화면에 나타남 -->
+    <a href="www.naver.com">A1</a>
+    <a href="https://www.naver.com">A2</a>
+    <a href="localhost:8080">A3</a>
+</body>
+</html>

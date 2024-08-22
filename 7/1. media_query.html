@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+    <!-- 화면 크기에 따른 적절한 레이아웃 구성의 변화를 적용하는 기술 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            /* viewport width, viewport height
+                => 실행 중인 스크린 크기에 맞춰 상대적으로 크기 변환
+                100vw, 100vh가 전체 화면의 기준 */
+            width: 100vw;
+            height: 100vh;
+            background-color: beige;
+        }
+        section {
+            position: absolute;
+            left: 50%;
+            top: 50%; /* 부모 크기 기준 */
+            transform: translate(-50%, -50%); /* 내 크기 기준 */
+            width: 500px;
+            aspect-ratio: 2/3;
+            background-image: url("https://images.unsplash.com/photo-1542931287-023b922fa89b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* 가로 길이가 1024px까지는 이 사진으로 */
+        @media screen and (max-width: 1024px) {
+            section {
+                background-image: url("https://plus.unsplash.com/premium_photo-1667627684620-b044407f968e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            }
+        }
+        /* 가로 길이가 768px까지는 이 사진으로 */
+        @media screen and (max-width: 768px) {
+            section{
+                background-image: url("https://plus.unsplash.com/premium_photo-1674824835422-1447f5901086?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            }
+        }
+        /* 가로 길이가 320px까지는 이 사진으로 */
+        @media screen and (max-width: 320px) {
+            section{
+                background-image: url("https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section></section>
+    </div>
+</body>
+</html>

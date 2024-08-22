@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transition</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: royalblue;
+            /* 속성 변경 완료될 때까지 걸리는 시간 */
+            transition-duration: 1s;
+            /* 속성 변경 시작할 때까지 걸리는 시간 */
+            transition-delay: 0.5s;
+            /* 속성 변경을 서서히 할지 등 변경 스타일을 설정 */
+            transition-timing-function: cubic-bezier(1, -0.02, 0.06, 0.91);
+            transition-property: transform, background-color;
+        }
+        #d1:hover {
+            opacity: 0.1;
+            /* 원래 위치의 200%만큼 이동 */
+            transform: translateX(200%) rotateZ(360deg);
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

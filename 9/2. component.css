@@ -1,0 +1,60 @@
+@import "../8/public.css";
+#input-group {
+    display: flex;
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#input-group label {
+    /* 두 라벨 균등하게 공간 차지하도록 */
+    flex: 1;
+    /* 기본 윤곽선 제거 */
+    outline: none;
+}
+#input-group input {
+    padding: 4px 10px;
+    /* 입력 필드가 라벨 전체 공간 채우도록 */
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    outline-width: 12px;
+    outline-color: rgba(0, 0, 255, 0.5);
+}
+#input-group label:first-child input {
+    /* 첫 번째 입력 필드 왼쪽 모서리 둥글게 */
+    /* 상단 왼쪽, 상단 오른쪽, 하단 오른쪽, 하단 왼쪽*/
+    border-radius: 8px 0 0 8px;
+}
+#input-group label:last-child {
+    /* 마지막 입력 필드 오른쪽 모서리 둥글게 */
+    border-radius: 0 8px 8px 0;
+}
+#input-group span {
+    padding: 4px 10px;
+}
+#password-group {
+    display: flex;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 6px;
+    overflow: hidden;
+}
+#password-group input {
+    padding: 5px 10px;
+    font-size: 20px;
+    /* 기본 테두리 제거 */
+    border: unset;
+    outline: none;
+}
+#password-group button {
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: unset;
+    margin-left: 5px;
+}
+#password-group i {
+    font-size: inherit;
+}

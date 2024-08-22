@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 정렬</title>
+    <style>
+        #parent1 {
+            background-color: beige;
+            text-align: center;
+        }
+        #parent2 {
+            background-color: blueviolet;
+            width: 200px;
+            margin: 0 auto;
+        }
+        #parent3 {
+            text-align: center;
+        }
+        #parent3 > div {
+            background-color: royalblue;
+            display: inline-block;
+        }
+        #parent4 {
+            background-color: lightyellow;
+            padding: 50px 0;
+        }
+        #parent5 {
+            display: table;
+            height: 200px;
+            background-color: skyblue;
+        }
+        #parent5 > span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        #parent6 {
+            position: relative;
+        }
+        #parent6 {
+            position: absolute;
+            left: 50%;
+            transform: translateY(-50%);
+        }
+        #parent7 {
+            display: flex;
+            /* 가로 축을 기준으로 좌우에 대한 정렬 !! */
+            justify-content: center;
+            /* 세로 축을 기준으로 정렬 !! (위 아래) */
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>수평 정렬(Horizontal Align)</h1>
+    <h3>Inline 요소를 정렬하고 싶을 때</h3>
+    <p>parent에 text-align: center</p>
+    <section id="parent1">
+        <span id="child1">자식</span>
+    </section>
+    <h3>Block 요소를 정렬하고 싶을 때</h3>
+    <p>정렬하고 싶은 block 요소에 width를 정해준 뒤, margin: auto 설정</p>
+    <section id="parent2">
+        <div id="child2">자식</div>
+    </section>
+    <h3>여러 개의 Block 요소를 정렬하고 싶을 때</h3>
+    <p>
+        1. 정렬하고 싶은 block 요소에 동일하게 width를 정해준 뒤, margin:auto 설정 <br>
+        2. 정렬하고 싶은 block 요소를 inline-block 등 inline 요소로 변경한 뒤, 부모에게 text-align: center 설정
+    </p>
+    <section id="parent3">
+        <div id="child3-1">자식1</div>
+        <div id="child3-1">자식2</div>
+    </section>
+
+    <h1>수직 정렬(Vertical Align)</h1>
+    <h3>Inline 요소를 정렬하고 싶을 때 (Block 요소도 가능)</h3>
+    <p>부모에 위 아래 padding을 동일하게 줘서 부모와 자식 사이에 간격을 띄워서 정렬된 것처럼 보이게 만듦</p>
+    <section id="parent4">
+        <span id="chile4">자식</span>
+    </section>
+    <h3>Inline 여러 줄 요소를 정렬하고 싶을 때</h3>
+    <p>위에 있는 padding 방법으로도 가능하고, table 형태로 구성해서 vertical: middle을 줌</p>
+    <section id="parent5">
+        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequatur deserunt dolores, doloribus dolorum earum eius illo in laboriosam maxime, nesciunt, placeat porro praesentium repudiandae similique sunt veritatis. Culpa, veniam?</span>
+    </section>
+    <h3>Block 요소를 정렬하고 싶을 때</h3>
+    <p>
+        부모 요소에 position: relative(static이 아니면 O)를 주고,
+        자식에게 position: absolute를 줘서 부모 기준으로 이동하게 만듦
+        left: 50%, transform: translateX(-50%)로 수평 정렬
+        top: 50%, transform: translateY(-50%)로 수직 정렬
+    </p>
+    <section id="parent6">
+        <div>자식</div>
+    </section>
+    <h3>Inline, Block 요소 모두 가능하면서 가장 간단한 방법</h3>
+    <p>
+        부모를 grid 혹은 flex로 만든 후, 부모에게 아래 내용을 적용
+        justify-content: center 수평 정렬
+        align-items: center 수직 정렬
+    </p>
+    <section id="parent7">
+        <div>자식</div>
+    </section>
+</body>
+</html>

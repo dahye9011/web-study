@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: lightgreen;
+        }
+        #ball {
+            border-radius: 50%;
+            border-top: 10px solid red;
+            border-left: 10px solid orange;
+            border-right: 10px solid yellow;
+            border-bottom: 10px solid green;
+            animation-name: ball;
+            animation-duration: 1s;
+            /* alternate : 재생 + 역재생 */
+            /* alternate-reverse : 역재생 + 재생 */
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes ball {
+            /* 프레임별 시간 비율 */
+            from { /* 애니메이션 시작 프레임 */
+                background-color: black;
+            }
+            20% {
+                background-color: royalblue;
+            }
+            60% {
+                background-color: blueviolet;
+            }
+            to { /* 애니메이션 마지막 프레임 */
+                transform: translateX(200%) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+</body>
+</html>

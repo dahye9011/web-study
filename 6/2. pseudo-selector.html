@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pseudo2</title>
+    <style>
+    /*  가상 클래스 : 기존에 존재하는 요소 선택, 특정 상태일 때 스타일을 적용
+        가상 요소 :: 실제로 존재하지 않는 가상의 요소를 만들어 스타일 적용
+     */
+        * {
+            font-size: 2rem;
+        }
+        ul > li:first-child {
+            color: darkred;
+        }
+        ul > li:last-child {
+            color: darkblue;
+        }
+        /* 부모 안에 있는 모든 요소 중에서 n번째 자식 요소를 선택 */
+        ul > li:nth-child(4) {
+            color: darkorange;
+        }
+        ul > li:nth-child(odd) {
+            background-color: lightgreen;
+        }
+        ul > li:nth-child(even) {
+            background-color: peachpuff;
+        }
+        /* first-child : 부모 요소의 첫 번째 자식을 선택
+           첫 번째 <div>의 첫 번째 자식은 <article>이기 때문에 해당하는 span 요소 X
+           두 번째 <div>의 첫 번째 자식 <span>에 적용됨 (SPAN2) */
+        span:first-child {
+            color: slateblue;
+        }
+        /* 줄에서 첫 번째 글자를 선택 (첫 번째 글자가 첫 번째 줄에 있어야 함*/
+        ::first-letter {
+            color: green;
+        }
+        /* 블록 레벨 요소의 첫 번째 줄에만 적용됨 */
+        ::first-line {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <article>ARTICLE</article>
+            <span>SPAN1-1</span>
+            <span>SPAN1-2</span>
+            <span>SPAN1-3</span>
+        </div>
+        <div>
+            <span>SPAN2</span>
+        </div>
+    </section>
+
+    <ul>
+        <li>리스트1</li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+        <li>리스트4</li>
+        <li>리스트5</li>
+        <li>리스트6</li>
+        <li>리스트7</li>
+        <li>리스트8</li>
+    </ul>
+</body>
+</html>

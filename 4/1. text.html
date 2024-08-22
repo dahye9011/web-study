@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text</title>
+    <style>
+    /*
+        capitalize : 첫 글자만 대문자, 나머지 소문자
+        full-width : 전각 문자로 표시
+    */
+    div {
+        text-transform: lowercase;
+        text-shadow: 10px -10px 10px red;
+        word-spacing: 20px; /* 단어마다 */
+        text-align: center;
+        line-height: 40px;
+    }
+    span {
+        text-transform: capitalize;
+        letter-spacing: 20px; /* 한 글자마다 */
+    }
+    a {
+        color: black;
+        text-decoration: none;
+        cursor: help;
+    }
+    input {
+        line-height: 40px;
+        color: rgb(38, 175, 180);
+    }
+    </style>
+</head>
+<body>
+    <div>DIV 태그</div>
+    <span>span 태그</span><br>
+    <a href="#">a 태그</a><br>
+    <input type="text" value="input 태그">
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form3</title>
+</head>
+<body>
+    <form>
+        <label>
+            <span>통신사 선택</span>
+            <!-- select는 select 태그에 name을 작성하면
+                화면에서 선택한 optiion이 value가 되어서 전송이 됨
+                value => 해당 항목을 선택할 때 서버로 넘겨줄 값을 지정
+                select의 제목이 되는 option은 selected disabled 하는 게 좋음 -->
+            <select name="tel" multiple>
+                <option selected disabled>선택</option>
+                <option>KT</option>
+                <option>LG</option>
+                <option>SK</option>
+            </select>
+        </label>
+        <hr>
+        <label>
+            <span>옷 컬러(사이즈) 선택</span>
+            <!-- option에 value 속성을 작성하지 않으면 기본적으로 option에 적힌 그대로가 value가 됨 -->
+            <select name="clothes">
+                <option selected disabled>선택</option>
+                <option value="bm">베이지(M)</option>
+                <option value="ws">워터코랄(S)</option>
+            </select>
+        </label>
+        <hr>
+        <label>
+            <input type="text" list="my-list">
+        </label>
+        <datalist id="my-list">
+            <option>선택1</option>
+            <option>선택2</option>
+            <option>선택3</option>
+        </datalist>
+        <button>전송하기</button>
+    </form>
+</body>
+</html>
