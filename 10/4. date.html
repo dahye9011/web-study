@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>날짜</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    const obj = {
+        a:1,
+        b:2,
+        c:function () {
+            console.log('c 실행!');
+        }
+    };
+    console.log(obj.a);
+    // 메서드 : 객체 안에 들어있는 함수
+    console.log(obj.c());
+    // now 변수에 현재 날짜와 시간 저장
+    var now = new Date();
+    console.log(now.getDate());
+    // 요일, 일요일 == 0
+    console.log(now.getDay());
+
+    // 날짜 (시간 포함) 문자열 형식으로 반환
+    console.log("toString", now.toString());
+    // 날짜만 문자열로 반환
+    console.log("toDateString", now.toDateString());
+    // 로컬 시간대에 맞게 날짜, 시간 반환
+    console.log("toLocaleString", now.toLocaleString());
+    // 날짜만 로컬 시간대에 맞게 반환
+    console.log("toLocalDateString", now.toLocaleDateString());
+    // 시간만 문자열로 반환
+    console.log("toTimeString", now.toTimeString());
+    // ISO 8601 형식 날짜, 시간 반환
+    console.log("toISOString", now.toISOString());
+    // UTC 형식 날짜, 시간 반환
+    console.log("toUTCString", now.toUTCString());
+</script>
